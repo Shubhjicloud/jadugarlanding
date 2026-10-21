@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join Our Telegram</title>
+
+    <link rel="stylesheet" href="style.css">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+// Pixel sirf ek baar init hoga
+if (!window.__pixelInitDone) {
+  window.__pixelInitDone = true;
+  fbq('set', 'autoConfig', false, '1410228561271650');
+  fbq('init', '1410228561271650');
+  fbq('track', 'PageView');
+}
+
+// Telegram button click -> Subscribe (sirf ek baar bind hoga)
+if (!window.__tgSubscribeBound) {
+  window.__tgSubscribeBound = true;
+
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('a, button');
+    if (!el) return;
+
+    var text = (el.innerText || '').trim().toLowerCase();
+    var href = (el.getAttribute('href') || '').toLowerCase();
+
+    var isTelegram =
+      text.includes('join telegram') ||
+      href.includes('t.me/') ||
+      href.includes('telegram.me/');
+
+    if (!isTelegram) return;
+
+    // 2 second cooldown (double click / double script dono se bachata hai)
+    var now = Date.now();
+    if (window.__tgLastFired && now - window.__tgLastFired < 2000) return;
+    window.__tgLastFired = now;
+
+    fbq('track', 'Subscribe');
+  });
+}
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1410228561271650&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="grid"></div>
+
+        <div class="particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Circular Photo -->
+        <div class="profile-wrapper">
+
+            <div class="ring ring-one"></div>
+            <div class="ring ring-two"></div>
+
+            <div class="profile">
+    <img src="profile.png" alt="Profile">
+            </div>
+
+        </div>
+
+
+        <!-- Heading -->
+        <h1>
+            JOIN OUR
+            <span>TELEGRAM</span>
+        </h1>
+
+
+        <p class="subtitle">
+            Join our exclusive Telegram community and
+            stay connected with the latest updates.
+        </p>
+
+
+        <!-- Button -->
+<a href="https://t.me/+bl4T05pokKBhMzll"
+   class="telegram-btn"
+   id="join-telegram">
+
+    <span class="telegram-icon">➤</span>
+
+    <span>JOIN TELEGRAM</span>
+
+    <span class="arrow">→</span>
+
+</a>
+
+
+        <!-- Small Info -->
+        <div class="members">
+            <div class="avatars">
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+            </div>
+
+            <p>
+                <strong>5,000+</strong> members already joined
+            </p>
+        </div>
+
+
+        <!-- Bottom Cards -->
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Updates</h3>
+                <p>Get important updates directly.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Private Community</h3>
+                <p>A dedicated Telegram community.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Stay Connected</h3>
+                <p>Don't miss new announcements.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
