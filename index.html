@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
 <!-- Meta Pixel Code -->
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,45 +18,13 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-
-// Pixel sirf ek baar init hoga
-if (!window.__pixelInitDone) {
-  window.__pixelInitDone = true;
-  fbq('set', 'autoConfig', false, '1410228561271650');
-  fbq('init', '1410228561271650');
-  fbq('track', 'PageView');
-}
-
-// Telegram button click -> Subscribe (sirf ek baar bind hoga)
-if (!window.__tgSubscribeBound) {
-  window.__tgSubscribeBound = true;
-
-  document.addEventListener('click', function (e) {
-    var el = e.target.closest('a, button');
-    if (!el) return;
-
-    var text = (el.innerText || '').trim().toLowerCase();
-    var href = (el.getAttribute('href') || '').toLowerCase();
-
-    var isTelegram =
-      text.includes('join telegram') ||
-      href.includes('t.me/') ||
-      href.includes('telegram.me/');
-
-    if (!isTelegram) return;
-
-    // 2 second cooldown (double click / double script dono se bachata hai)
-    var now = Date.now();
-    if (window.__tgLastFired && now - window.__tgLastFired < 2000) return;
-    window.__tgLastFired = now;
-
-    fbq('track', 'Subscribe');
-  });
-}
+fbq('init', '1410228561271650');
+fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1410228561271650&ev=PageView&noscript=1"
 /></noscript>
+<!-- End Meta Pixel Code -->
 <!-- End Meta Pixel Code -->
 </head>
 
